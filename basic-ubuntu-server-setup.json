@@ -1,0 +1,45 @@
+{
+  "builders": [
+    {
+      "type": "digitalocean",
+      "image": "ubuntu-15-10-x64",
+      "region": "fra1",
+      "size": "512mb",
+      "droplet_name": "basic-ubuntu-setup"
+    },
+    {
+        "type": "docker",
+        "image": "ubuntu:15.10",
+        "export_path": "basic-ubuntu-server-setup.tar"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "awk '/```/{f=0} f; /```bash/{f=1}' {{ .Path }} | {{ .Vars }} /bin/bash -ex",
+      "environment_vars": [
+          "USER_NAME={{user `non-root-user-name`}}",
+          "SSH_KEY={{user `non-root-user-ssh-key`}}"
+      ],
+      "scripts": [
+          "update.md",
+          "timezone.md",
+          "firewall.md",
+          "non-root-user-with-ssh-public-key.md"
+      ],
+      "override": {
+        "docker": {
+          "scripts": [
+            "update.md",
+            "timezone.md",
+            "non-root-user-with-ssh-public-key.md"
+          ]
+        }
+      }
+    }
+  ],
+  "variables": {
+    "non-root-user-name": "{{env `USER_NAME`}}",
+    "non-root-user-ssh-key": "{{env `SSH_KEY`}}"
+  }
+}
