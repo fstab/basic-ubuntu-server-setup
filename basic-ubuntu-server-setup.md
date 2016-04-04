@@ -154,7 +154,7 @@ This tutorial is an example of
 _Literate Shell Scripting with Markdown and Packer_,
 which is introduced here: [labs.consol.de]
 
-[labs.consol.de]: https://labs.consol.de/packer/2016/04/10/literate-shell-scripting.html
+[labs.consol.de]: https://labs.consol.de/packer/2016/04/04/literate-shell-scripting.html
 [update.md]: update.md
 [timezone.md]: timezone.md
 [firewall.md]: firewall.md
