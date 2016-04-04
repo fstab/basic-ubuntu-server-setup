@@ -2,7 +2,7 @@ How to Set Up a Basic Ubuntu 15.10 Server with SSH Access
 ---------------------------------------------------------
 
 This tutorial is an example of _Literate Shell Scripting_, which is a way of
-documenting shell scripts that was introduced in a [blog post on labs.consol.de].
+documenting shell scripts that was introduced in a blog post on [labs.consol.de].
 
 The example tutorial shows some basic steps for setting up a new
 Ubuntu 15.10 server with SSH access:
@@ -154,6 +154,7 @@ This tutorial is an example of
 _Literate Shell Scripting with Markdown and Packer_,
 which is introduced here: [labs.consol.de]
 
+[labs.consol.de]: https://labs.consol.de/packer/2016/04/10/literate-shell-scripting.html
 [update.md]: update.md
 [timezone.md]: timezone.md
 [firewall.md]: firewall.md
